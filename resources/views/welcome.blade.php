@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="url" content="{{ url('') }}"
     <link rel="icon" href="../../favicon.ico">
 
     <title>Justified Nav Template for Bootstrap</title>
@@ -28,8 +30,8 @@
       <div class="jumbotron">
         <h1>BoardingInfo Sys!</h1>
         <p class="lead">
-          প্রিয় পর্যটক! আপনার ব্যাক্তিগত নিরাপত্তার স্বার্থে আপনার তথ্য হালনাগাদ / যোগ করে ট্যুরিস্ট পুলিশ বাংলাদেশ"কে সাহায্য করুন  ।  <br> <br>
-         আপনার যাত্রা শুভ হোক!
+            {{ __('text.BIS') }} <br> <br>
+            {{ __('text.Jatra') }}
         </p>
         <p>
         <a class="btn btn-lg btn-success" href="{{ route('register') }}" role="button">Register as a Tourist</a></p>
@@ -40,19 +42,18 @@
         <div class="col-lg-4">
           <h2>Login To Your Account</h2>
           <p>
-
-         আপনার ব্যাক্তিগত এ্যাকাউন্টে লগইন করুন ! শুধুমাত্র লগইন করার পর আপনার যাবতীয় তথ্য হালনাগাদ করতে পারবেন এবং যাবতীয় জরূরী সেবার নটিফিকেশন পাবেন ।
+         {{ __('text.login') }}
         </p>
           <p>
               <a class="btn btn-primary" href="{{ route('login') }}" role="button">Login &raquo;</a></p>
         </div>
 
-          {{--  <div class="col-lg-4">
+          <div class="col-lg-4">
           <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+          <p id="app">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
           <p>
           </p>
-        </div>    --}}
+        </div>
       </div>
 
       <!-- Site footer -->
@@ -72,5 +73,9 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="{{ asset('js/app.js') }}">
+
+    </script>
   </body>
 </html>

@@ -21,4 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/category', 'CategoryController@index')->name('admin.category');
+
+Route::prefix('api')->group(function () {
+    // Get All The Category
+    Route::get('/category', 'CategoryController@index')->name('admin.category');
+});
