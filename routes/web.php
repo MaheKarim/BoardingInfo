@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/user/dashboard', 'UserController@index')->name('user.home');
+Route::get('/admin/dashboard', 'AdminController@index')->name('admin.home');
+
+
 
 Route::prefix('api')->group(function () {
     // Get All The Category
