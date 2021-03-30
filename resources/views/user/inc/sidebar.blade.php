@@ -7,8 +7,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="{{ route('user.home') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <a class="nav-link" href="{{ route('user.dataSend') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-server"></i></div>
                     Send Data
                 </a>
             </div>

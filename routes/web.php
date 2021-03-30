@@ -25,7 +25,13 @@ Route::get('/user/dashboard', 'UserController@index')->name('user.home');
 Route::get('/admin/dashboard', 'AdminController@index')->name('admin.home');
 
 
+Route::middleware(['role:user'])->group(function () {
 
+    Route::get('user/data-send', 'UserDataController@create')->name('user.dataSend');
+});
+
+
+// API Enable
 Route::prefix('api')->group(function () {
     // Get All The Category
     Route::get('/category', 'CategoryController@index')->name('admin.category');
