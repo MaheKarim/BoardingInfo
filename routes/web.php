@@ -28,6 +28,7 @@ Route::get('/admin/dashboard', 'AdminController@index')->name('admin.home');
 Route::middleware(['role:user'])->group(function () {
 
     Route::get('user/data-send', 'UserDataController@create')->name('user.dataSend');
+    Route::post('user/data-store', 'UserDataController@store')->name('user.dataStore');
 });
 
 

@@ -26,6 +26,7 @@ class CreateUserDataTable extends Migration
             $table->string('total_bag');
             $table->unsignedBigInteger('user_id');
             $table->string('comment')->nullable();
+            $table->boolean('isApproved')->default(0)->comment('1 Means Approved');
             $table->timestamps();
         });
     }

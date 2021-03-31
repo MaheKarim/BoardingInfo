@@ -11,13 +11,13 @@
         </ol>
       </nav>
 
-      <form>
-
+      <form action="{{ route('user.dataStore') }}" method="POST">
+        @csrf
           <div class="form-group">
             <label for="inputEmail4">Traveler Name</label>
             <input type="text" class="form-control" name="traveler_name"  placeholder="Traveler Name">
           </div>
-    <div class="form-row">
+         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputPassword4">Traveler Phone</label>
             <input type="text" class="form-control" name="traveler_phn" placeholder="Phone Number">

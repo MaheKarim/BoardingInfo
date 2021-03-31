@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\UserData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserDataController extends Controller
 {
@@ -35,7 +36,22 @@ class UserDataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userdatas = new UserData();
+        $userdatas->traveler_name = $request->traveler_name ;
+        $userdatas->traveler_phn = $request->traveler_phn ;
+        $userdatas->traveler_alt_phn = $request->traveler_alt_phn ;
+        $userdatas->traveler_area = $request->traveler_area ;
+        $userdatas->traveler_cottage_name = $request->traveler_cottage_name ;
+        $userdatas->traveler_start_date = $request->traveler_start_date ;
+        $userdatas->traveler_end_date = $request->traveler_end_date ;
+        $userdatas->total_member = $request->total_member ;
+        $userdatas->total_bag = $request->total_bag ;
+        $userdatas->comment = $request->comment ;
+        $userdatas->user_id = Auth::id() ;
+        $userdatas->save();
+
+        session()->flash('success', 'Created Successfully!');
+        return redirect()->route('user.home');
     }
 
     /**
