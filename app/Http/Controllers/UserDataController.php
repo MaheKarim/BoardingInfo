@@ -62,7 +62,8 @@ class UserDataController extends Controller
      */
     public function show(UserData $userData)
     {
-        //
+
+      //  return view('')
     }
 
     /**

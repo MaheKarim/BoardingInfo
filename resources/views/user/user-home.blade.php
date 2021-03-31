@@ -66,21 +66,23 @@
                             <th>Start Date</th>
                             <th>End Date</th>
                             <th>Total Member</th>
-                            <th>Start date</th>
+                            <th>Total Bag</th>
                             <th>Report</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @foreach ($datas as $item)
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                            <td>$320,800</td>
+                            <td>{{ $item->traveler_area }}</td>
+                            <td>{{ $item->traveler_name }}</td>
+                            <td>{{ $item->traveler_start_date }}</td>
+                            <td>{{ $item->traveler_end_date }}</td>
+                            <td>{{ $item->total_member }}</td>
+                            <td>{{ $item->total_bag }}</td>
+                            <td>{{ $item->isApproved }}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

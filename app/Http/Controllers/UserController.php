@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
+use App\UserData;
 
 use Illuminate\Http\Request;
 
@@ -14,6 +16,8 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('user.user-home');
+        $datas = UserData::where('user_id', Auth::id())->get();
+
+        return view('user.user-home', compact('datas'));
     }
 }
