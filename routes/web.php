@@ -20,9 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/admin/dashboard', 'AdminController@index')->name('admin.home');
+    Route::get('/user/dashboard', 'UserController@index')->name('user.home');
 
-Route::get('/user/dashboard', 'UserController@index')->name('user.home');
-Route::get('/admin/dashboard', 'AdminController@index')->name('admin.home');
+
+    Route::get('/all/users_data', 'AdminController@show_data')->name('admin.all_data');
+
 
 
 Route::middleware(['role:user'])->group(function () {

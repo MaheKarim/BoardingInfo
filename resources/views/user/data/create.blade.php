@@ -1,6 +1,5 @@
 @extends('user.home')
 
-
 @section('content')
 <div class="container-fluid">
     <h1 class="mt-4"> Send Data</h1>
@@ -22,7 +21,6 @@
             <label for="inputPassword4">Traveler Phone</label>
             <input type="text" class="form-control" name="traveler_phn" placeholder="Phone Number">
           </div>
-
         <div class="form-group col-md-6">
           <label for="inputAddress">Traveler Alter Phone</label>
           <input type="text" class="form-control" name="traveler_alt_phn" placeholder="Alternative Phone Number">
@@ -37,9 +35,8 @@
         <div class="form-group">
             <label for="inputCity">Cottage Name</label>
             <input type="text" class="form-control" id="inputCity" name="traveler_cottage_name" placeholder="Cottage Name">
-          </div>
+        </div>
         <div class="form-row">
-
           <div class="form-group col-md-6">
             <label for="inputCity">Journey Start Date</label>
             <input type="date" class="form-control" id="inputCity" name="traveler_start_date">
@@ -48,7 +45,6 @@
             <label for="inputCity">Journey End Date</label>
             <input type="date" class="form-control" id="inputCity" name="traveler_end_date">
           </div>
-
         </div>
 
         <div class="form-row">
@@ -64,14 +60,11 @@
         <div class="form-group">
             <label for="inputCity">Cottage Name</label>
             <input type="text" class="form-control" id="inputCity" name="comment" placeholder="Comment">
-
         </div>
 
         <button type="submit" class="btn btn-success">Save</button>
       </form>
 
-
 </div>
-
 
 @endsection
