@@ -9,6 +9,17 @@
                 <li class="breadcrumb-item active" aria-current="page"> Show Data</li>
             </ol>
         </nav>
+        <!-- Notification Start Here -->
+        @if (session()->has('error'))
+            <div class="alert alert-danger">
+                {{ session()->get('error') }}
+            </div>
+        @elseif (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+    @endif
+    <!-- Notification End Here -->
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
@@ -48,9 +59,9 @@
                                 <td>{{ $item->comment }}</td>
                                 <td>
                                     @if( $item->isApproved == 0 )
-                                        <button type="button" class="btn btn-danger">Edit</button>
+                                        <a href="{{ route('admin.edit_data', $item->id) }}" type="button" class="btn btn-danger">Edit</a>
                                     @elseif( $item->isApproved == 1 )
-                                        <button type="button" class="btn btn-success">OK</button>
+                                        <a href="{{ route('admin.edit_data', $item->id) }}" type="button" class="btn btn-success">Update</a>
                                     @endif
 
                                 </td>
