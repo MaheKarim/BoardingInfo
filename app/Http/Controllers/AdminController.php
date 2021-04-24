@@ -22,8 +22,9 @@ class AdminController extends Controller
 
     public function show_data()
     {
+        $users = User::all();
         $datas = UserData::all();
-        return view('backend.users_data.index', compact('datas'));
+        return view('backend.users_data.index', compact('datas', 'users'));
     }
 
     public function edit_data($id)
