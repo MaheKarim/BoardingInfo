@@ -5,38 +5,34 @@
     use App\User;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Hash;
-    use Illuminate\Support\Facades\Request;
+   // use Illuminate\Support\Facades\Request;
+    use Illuminate\Http\Request;
 
     class ProfileController extends Controller {
         // code start
         public function password_update() {
-            return view('backend.password_change');
+            $users = User::all();
+            return view('backend.password_change', compact('users'));
         }
 
-        public function update(Request $request ) {
-            $id = Auth::user()->id;
-            $db_password = Auth::user()->password;
-            $old_pass = $request->old_password;
-            $new_pass = $request->new_password;
-            $confirm_pass = $request->confirm_password;
+        public function update(Request $request) {
 
-            if (Hash::check($db_password, $old_pass)){
-                if ($new_pass === $confirm_pass) {
-                    User::find($id)->update([
-                        'password' => Hash::make($request->new_password)
-                    ]);
-                    Auth::logout();
-                    return redirect()->route('login');
+            $this->validate($request,[
+                'oldpassword' => 'required',
+                'password' => 'required|confirmed'
+            ]);
 
-                }else{
-                    session()->flash('error', 'New Password & Confirm Pass !match successfully');
-                    return redirect()->route('admin.home');
-                }
-            } else{
-                session()->flash('error', 'Password !changed successfully');
-                return redirect()->route('admin.home');
+            $hashedPassword = Auth::User()->password;
+            if(Hash::check($request->oldpassword,$hashedPassword))
+            {
+                $user = User::find(Auth::id());
+                $user->password = Hash::make($request->password);
+                $user->save();
+                Auth::logout();
+
+                return redirect()->route('login')->with('success','Password Change Succesfully!');
+            } else {
+                return redirect()->back()->with('errorMSG' ,  'Current Password Invalid!');
             }
-
-
         }
     }
