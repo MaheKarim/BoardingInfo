@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\UserData;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,10 @@ class AdminController extends Controller
          $this->middleware('role:superadministrator');
      }
     public function index()
+
     {
-        return view('admin-home');
+        $users = User::all();
+        return view('admin-home', compact('users'));
     }
 
     public function show_data()
