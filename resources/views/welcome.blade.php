@@ -58,7 +58,7 @@
 
       <!-- Site footer -->
       <footer class="footer">
-        <p>&copy; HyperLoop {{ now()->year }}</p>
+        <p>&copy; Tourist Boarding Information System {{ now()->year }}</p>
       </footer>
 
     </div> <!-- /container -->
