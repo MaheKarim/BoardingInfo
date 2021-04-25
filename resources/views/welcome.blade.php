@@ -9,7 +9,7 @@
     <meta name="url" content="{{ url('') }}"
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>Tourist Boarding Information System</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/">
 
     <!-- Bootstrap core CSS -->
@@ -22,13 +22,13 @@
  <br>
     <div class="container">
       <div class="masthead">
-        <h3 class="text-muted">Boarding Information System</h3>
+        <h3 class="text-muted">Tourist Boarding Information System</h3>
          <br> <br>
       </div>
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>BoardingInfo Sys!</h1>
+        <h1>Tourist Boarding Information System - TBIS </h1>
         <p class="lead">
             {{ __('text.BIS') }} <br> <br>
             {{ __('text.Jatra') }}
