@@ -10,7 +10,6 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Tourist Boarding Information System</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/">
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url('/') }}/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +19,9 @@
 
   <body>
  <br>
+ 
     <div class="container">
+
       <div class="masthead">
         <h3 class="text-muted">Tourist Boarding Information System</h3>
          <br> <br>
