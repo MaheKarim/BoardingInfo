@@ -63,7 +63,7 @@
                                     @elseif( $item->isApproved == 1 )
                                         <a href="{{ route('admin.edit_data', $item->id) }}" type="button" class="btn btn-success">Update</a>
                                     @endif
-
+                                  <br>    <a href="{{ route('admin.delete_data', $item->id) }}" type="button" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -30,8 +30,8 @@ class AdminController extends Controller
     public function edit_data($id)
     {
         $datas = UserData::find($id);
-
-        return view('backend.users_data.update', compact('datas'));
+        $users = User::all();
+        return view('backend.users_data.update', compact('datas', 'users'));
     }
 
     public function update_data(Request $request,$id)
@@ -41,6 +41,14 @@ class AdminController extends Controller
         ]);
 
         session()->flash('success',' Request Successfully Updated!');
+        return redirect()->route('admin.all_data');
+    }
+
+    public function delete_data($id)
+    {
+        $datas = UserData::findOrfail($id)->delete();
+
+        session()->flash('error',' Request Successfully Deleted!');
         return redirect()->route('admin.all_data');
     }
 }

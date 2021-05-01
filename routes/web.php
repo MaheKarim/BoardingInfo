@@ -26,6 +26,7 @@ Auth::routes();
     Route::get('/all/users_data', 'AdminController@show_data')->name('admin.all_data');
     Route::get('/users_data/{id}', 'AdminController@edit_data')->name('admin.edit_data');
     Route::post('/users-data-update/{id}', 'AdminController@update_data')->name('admin.update_data');
+    Route::get('/users-data/delete/{id}', 'AdminController@delete_data')->name('admin.delete_data');
 
 Route::middleware(['role:user'])->group(function () {
 

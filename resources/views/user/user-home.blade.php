@@ -45,13 +45,10 @@
                             <td>
                                 @if ( $item->isApproved == 1 )
                                     Accepted
-
-
                                 @elseif ( $item->isApproved == 0 )
-
                                     Pending
-
                                 @endif
+
                             </td>
                         </tr>
                         @endforeach
