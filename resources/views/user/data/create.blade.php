@@ -54,7 +54,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputCity">Total Bag</label>
-                <input type="text" class="form-control" id="inputCity" name="total_bag" placeholder="Total Member">
+                <input type="text" class="form-control" id="inputCity" name="total_bag" placeholder="Total Bag">
             </div>
         </div>
         <div class="form-group">
