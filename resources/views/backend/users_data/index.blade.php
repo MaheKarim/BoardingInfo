@@ -30,10 +30,10 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Traveler Name</th>
+                            <th>Traveller Name</th>
                             <th>Travel Destination</th>
-                            <th>Traveler PHN</th>
-                            <th>Traveler Alt PHN</th>
+                            <th>traveller  PHN</th>
+                            <th>traveller Alt PHN</th>
                             <th>Cottage Name</th>
                             <th>Start Date</th>
                             <th>End Date</th>
